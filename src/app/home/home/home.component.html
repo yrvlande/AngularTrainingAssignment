@@ -1,0 +1,13 @@
+<div *ngIf='!authFlag'>
+  <span class="mat-display-5">Please authenticate to access Employee</span>
+<form [formGroup]= "authorizationForm" (ngSubmit)= 'submit()'>
+<mat-form-field>
+  <input type="password" matInput placeholder="password" formControlName="authorizationPassword" (click)='resetErrorFlag()' >
+</mat-form-field>
+<button type="submit" style="margin-left:2.5em" mat-raised-button color='primary' >Authenticate</button>
+</form>
+</div>
+<div *ngIf='authFlag' class="mat-display-5">You are Authorized to access Employee</div>
+<div>
+<mat-error *ngIf='errorFlag' class="mat-display-5">You are not Authorized!</mat-error>
+</div>

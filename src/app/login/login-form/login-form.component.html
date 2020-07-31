@@ -1,0 +1,31 @@
+<router-outlet> </router-outlet>
+<div class='login' *ngIf='!isValid' >
+ <mat-card>
+  <mat-card-title >Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username" formControlName="userID">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" formControlName="userPassword">
+  </mat-form-field>
+</p>
+
+<p *ngIf="showErrorMessage" class="error">
+  {{ errorMessage }}
+</p>
+
+<div class="button">
+  <button type="submit" mat-button>Login</button>
+</div>
+
+</form>
+</mat-card-content>
+</mat-card>
+</div>
+

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Practice';
+  navLinks: any[];
+
+  constructor() {
+     this.navLinks = [
+       {lable: 'Administrator'},
+       {lable: 'Human Resources'}
+     ];
+
+  }
 }
